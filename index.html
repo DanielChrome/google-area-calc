@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+ @license
+ Copyright 2019 Google LLC. All Rights Reserved.
+ SPDX-License-Identifier: Apache-2.0
+-->
+<html>
+  <head>
+    <title>User-Editable Shapes</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="module" src="./index.ts"></script>
+  </head>
+  <body>
+    <div >
+      <div class="controls">
+        <input id="rest-lat" placeholder="Restaurant Latitude"/>
+        <input id="rest-lng" placeholder="Restaurant Longitude"/>
+        <div class="area">
+          <input id="sw-lat" placeholder="South-West Latitude"/>
+          <input id="sw-lng" placeholder="South-West Longitude"/>
+          <input id="ne-lat" placeholder="North-East Latitude"/>
+          <input id="ne-lng" placeholder="North-East Longitude"/>
+        </div>
+        <div>
+          <button id="submit" onClick={showArea}>Calculate Area</button>
+        </div>
+      </div>
+      <div id="map"></div>
+    <div>
+
+
+
+    <!-- 
+      The `defer` attribute causes the callback to execute after the full HTML
+      document has been parsed. For non-blocking uses, avoiding race conditions,
+      and consistent behavior across browsers, consider loading using Promises.
+      See https://developers.google.com/maps/documentation/javascript/load-maps-js-api
+      for more information.
+      -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=GOOGLE_KEY&callback=initMap&v=weekly"
+      defer
+    ></script>
+  </body>
+</html>
